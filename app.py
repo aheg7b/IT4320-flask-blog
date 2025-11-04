@@ -54,8 +54,12 @@ def create():
             return redirect(url_for('index'))
     return render_template('create.html')
 
-@app.route('/<int:id>/edit/', methode=('GET', 'POST'))
+@app.route('/<int:id>/edit/', method=('GET', 'POST'))
 def edit(id):
-    pass
+    post = get_post(id)
+    if request.method == 'POST':
+        pass
+
+    return render_template('edit.html', post=post)
 
 app.run()
