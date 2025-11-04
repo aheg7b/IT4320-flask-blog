@@ -29,6 +29,10 @@ def index():
     return render_template('index.html',posts=posts)
 
 # route to create a post
-
+@app.route('/create/', methods=('GET', 'POST'))
+def create():
+    if request.method =='POST':
+        pass
+    return render_template('create.html')
 
 app.run()
