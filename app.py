@@ -20,6 +20,13 @@ def get_db_connection():
     #return the connection object
     return conn
 
+def get_post(post_id):
+    conn = get_db_connection()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id)).fetchone()
+    conn.close()
+    if post is None:
+        abort(404)
+    return post
 
 # use the app.route() decorator to create a Flask view function called index()
 @app.route('/')
