@@ -62,4 +62,4 @@ def edit(id):
 
     return render_template('edit.html', post=post)
 
-app.run()
+app.run(port=5008)
